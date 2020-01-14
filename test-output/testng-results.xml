@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test Automation Suite for Cogmento" duration-ms="204246" started-at="2020-01-14T22:52:40Z" finished-at="2020-01-14T22:56:05Z">
+    <groups>
+    </groups>
+    <test name="CogmentoHappyPathTests_Firefox" duration-ms="204246" started-at="2020-01-14T22:52:40Z" finished-at="2020-01-14T22:56:05Z">
+      <class name="com.cogmento.testcases.CogmentoHappyPathTests">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="setup" is-config="true" duration-ms="19104" started-at="2020-01-14T22:52:40Z" finished-at="2020-01-14T22:52:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="addCompanyTest(java.util.Map)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="addCompanyTest" duration-ms="132272" started-at="2020-01-14T22:53:01Z" data-provider="newCompanyDataProvider" finished-at="2020-01-14T22:55:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Phone - Type=Office, Description=Origin are a global leader in the design and manufacture of custom aluminum bi-fold doors and windows.
+Combining a high grade aluminum with precision engineering, Origin have a proven track record in providing high quality, functional and stylish products that are built to last., Category=Prospect, Phone - Country=United States, Website=www.originbifolds.com, Address - Country=United States, Social Channels - Twitter Handle=@originbifolds, Annual Revenue=10000000, Address - Zip Code=34292, Stock Symbol=ORN, Source=Internet, Name=Origin USA Inc., Industry=Construction - Interiors, Address - Street Address=700 Commerce Drive, Identifier=10001, VAT Number=1234567, exe file suffix for Image Upload=origin_usa_inc_image_upload.exe, Social Channels - Facebook Profile Link=https://www.facebook.com/OriginBifoldsUSA, Tags=bi-fold patio doors; best interiors; bi-fold windows, Status=Active, Address - City=Venice, Priority=High, Social Channels - LinkedIn Profile Link=https://www.linkedin.com/company/origin-frames, Num. of Employees=100, Address - State/County=Florida, Phone - Number=941-484-4861}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addCompanyTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="teardown" is-config="true" duration-ms="51836" started-at="2020-01-14T22:55:13Z" finished-at="2020-01-14T22:56:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.cogmento.testcases.CogmentoHappyPathTests -->
+    </test> <!-- CogmentoHappyPathTests_Firefox -->
+  </suite> <!-- Test Automation Suite for Cogmento -->
+</testng-results>

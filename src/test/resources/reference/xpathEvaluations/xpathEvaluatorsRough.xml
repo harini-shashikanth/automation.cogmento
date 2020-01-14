@@ -1,0 +1,27 @@
+<div class="field">
+	<label>Tags</label>
+	<label for="tags">
+		<div role="combobox" aria-busy="false" aria-expanded="true"
+			class="ui active visible fluid multiple search selection dropdown">
+			<input aria-autocomplete="list" autocomplete="off" class="search"
+				tabindex="0" type="text" value="bi-fold patio doors" style="width: 146px;">
+				<span class="sizer" style="">bi-fold patio doors</span>
+				<div class="text filtered" role="alert" aria-live="polite"
+					aria-atomic="true"></div>
+				<i aria-hidden="true" class="search icon"></i>
+				<div aria-multiselectable="true" role="listbox" class="visible menu transition">
+					<div data-additional="true" role="option" aria-checked="false"
+						aria-selected="true" class="selected item addition" style="pointer-events: all;">
+						<span class="text">
+							Add
+							<b>bi-fold patio doors</b>
+						</span>
+					</div>
+					<div role="option" aria-checked="false" aria-selected="false"
+						class="item" style="pointer-events: all;">
+						<span class="text"> bi-fold patio doors</span>
+					</div>
+				</div>
+		</div>
+	</label>
+</div>
