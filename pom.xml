@@ -33,16 +33,33 @@
 			<artifactId>poi-ooxml</artifactId>
 			<version>4.1.1</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.relevantcodes</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>2.41.2</version>
+		</dependency>
 
 	</dependencies>
 	<build>
-	 <resources>
-        <resource>
-            <directory>src/main/resources</directory>
-            <excludes>
-                <exclude>src/main/resources/reference/</exclude>
-            </excludes>
-        </resource>
-    </resources>
+		<!-- <resources> <resource> <directory>src/main/resources</directory> <excludes> 
+			<exclude>src/main/resources/reference/</exclude> </excludes> </resource> 
+			</resources> -->
+
+		<!-- Integration of Maven (Surefire) test with TestNG XML -->
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+
 	</build>
 </project>

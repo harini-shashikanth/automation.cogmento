@@ -12,7 +12,7 @@ import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtil {
-	public static String testDataExcelFilePath = System.getProperty("user.dir") + "/testdata/cogmentoTestData.xlsx";
+	public static String testDataExcelFilePath = System.getProperty("user.dir") + "/testdata/" + ConfigUtil.getProperty("testDataExcelFile");
 	static Workbook workbook;
 
 	public static Object[][] getTestData(String sheetName) {

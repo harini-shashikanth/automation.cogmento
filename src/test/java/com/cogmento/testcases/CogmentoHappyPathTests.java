@@ -30,20 +30,21 @@ import com.util.ExcelUtil;
  */
 public class CogmentoHappyPathTests {
 	WebDriver driver;
-	
+
 	@DataProvider
 	public Object[][] newCompanyDataProvider() {
 		return ExcelUtil.getTestDataMaps("Companies");
 	}
 
 	@BeforeClass
-	@Parameters({ "browser" })
-	public void setup(String browser) {
+	@Parameters({ "browser", "homePageUrl" })
+	public void setup(String browser, String homePageUrl) {
+		System.out.println(homePageUrl);
 		driver = BrowserUtil.getWebDriver(browser);
-		driver.get(ConfigUtil.getProperty("homePageUrl"));
+		driver.get(homePageUrl);
 		HomePage homePage = new HomePage(driver);
 		homePage.getLoginBtn().click();
-		
+
 		LoginPage loginPage = new LoginPage(driver);
 		String username = ConfigUtil.getProperty("default.username");
 		String password = ConfigUtil.getProperty("default.password");
@@ -67,7 +68,7 @@ public class CogmentoHappyPathTests {
 
 	@AfterClass(alwaysRun = true)
 	public void teardown() {
-		BrowserUtil.sleep(50000);
+		BrowserUtil.sleep(5000);
 		driver.close();
 	}
 

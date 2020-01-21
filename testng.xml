@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Cogmento Test Suite">
+<suite name="Cogmento Test Suite For Firefox">
+	<parameter name="homePageUrl" value="https://cogmento.com"></parameter>
+	
+
 	<test thread-count="1" name="CogmentoHappyPathTests">
 	<parameter name="browser" value="firefox"></parameter>
 		<classes>
 			<class name="com.cogmento.testcases.CogmentoHappyPathTests" />
 		</classes>
-	</test> <!-- Test -->
-</suite> <!-- Suite -->
+	</test>
+
+	<listeners>
+		<listener class-name="com.util.ExtentReporter" />
+	</listeners>
+
+</suite> 

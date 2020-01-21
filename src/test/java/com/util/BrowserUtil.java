@@ -8,12 +8,10 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
@@ -21,7 +19,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.openqa.selenium.support.events.WebDriverEventListener;
 
 /**
  * @author Harini
@@ -96,122 +93,7 @@ public class BrowserUtil {
 
 	private static WebDriver convertToEventFiringWebDriver(WebDriver driver) {
 		EventFiringWebDriver eventFiringWebDriver = new EventFiringWebDriver(driver);
-		eventFiringWebDriver.register(new WebDriverEventListener() {
-			@Override
-			public void onException(Throwable throwable, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeSwitchToWindow(String windowName, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeScript(String script, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeNavigateTo(String url, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeNavigateRefresh(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeNavigateForward(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeNavigateBack(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeGetText(WebElement element, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public <X> void beforeGetScreenshotAs(OutputType<X> target) {
-			}
-
-			@Override
-			public void beforeFindBy(By by, WebElement element, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeClickOn(WebElement element, WebDriver eventFiringWebDriver) {
-				// TODO
-				// BrowserUtil.takeScreenshot(eventFiringWebDriver,
-				// eventFiringWebDriver.getCurrentUrl());
-			}
-
-			@Override
-			public void beforeChangeValueOf(WebElement element, WebDriver eventFiringWebDriver, CharSequence[] keysToSend) {
-			}
-
-			@Override
-			public void beforeAlertDismiss(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void beforeAlertAccept(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterSwitchToWindow(String windowName, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterScript(String script, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterNavigateTo(String url, WebDriver eventFiringWebDriver) {
-				BrowserUtil.takeScreenshot(eventFiringWebDriver, driver.getCurrentUrl());
-			}
-
-			@Override
-			public void afterNavigateRefresh(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterNavigateForward(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterNavigateBack(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterGetText(WebElement element, WebDriver eventFiringWebDriver, String text) {
-			}
-
-			@Override
-			public <X> void afterGetScreenshotAs(OutputType<X> target, X screenshot) {
-			}
-
-			@Override
-			public void afterFindBy(By by, WebElement element, WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterClickOn(WebElement element, WebDriver eventFiringWebDriver) {
-				BrowserUtil.sleep(1000);
-				BrowserUtil.takeScreenshot(eventFiringWebDriver, eventFiringWebDriver.getCurrentUrl());
-			}
-
-			@Override
-			public void afterChangeValueOf(WebElement element, WebDriver eventFiringWebDriver, CharSequence[] keysToSend) {
-				BrowserUtil.takeScreenshot(eventFiringWebDriver, eventFiringWebDriver.getCurrentUrl());
-			}
-
-			@Override
-			public void afterAlertDismiss(WebDriver eventFiringWebDriver) {
-			}
-
-			@Override
-			public void afterAlertAccept(WebDriver eventFiringWebDriver) {
-			}
-		});
+		eventFiringWebDriver.register(new WebDriverEventListenerImpl());
 		return eventFiringWebDriver;
 	}
 

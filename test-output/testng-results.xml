@@ -2,23 +2,28 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Cogmento Test Suite" duration-ms="211527" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:50:19Z">
+  <suite name="Cogmento Test Suite For Firefox" duration-ms="269046" started-at="2020-01-21T05:05:52Z" finished-at="2020-01-21T05:10:22Z">
     <groups>
     </groups>
-    <test name="CogmentoHappyPathTests" duration-ms="211527" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:50:19Z">
+    <test name="CogmentoHappyPathTests" duration-ms="269046" started-at="2020-01-21T05:05:52Z" finished-at="2020-01-21T05:10:22Z">
       <class name="com.cogmento.testcases.CogmentoHappyPathTests">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="setup" is-config="true" duration-ms="24688" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:47:12Z">
+        <test-method status="PASS" signature="setup(java.lang.String, java.lang.String)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@6a4f787b]" name="setup" is-config="true" duration-ms="58809" started-at="2020-01-21T05:05:52Z" finished-at="2020-01-21T05:06:51Z">
           <params>
             <param index="0">
               <value>
                 <![CDATA[firefox]]>
               </value>
             </param>
+            <param index="1">
+              <value>
+                <![CDATA[https://cogmento.com]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addCompanyTest(java.util.Map)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="addCompanyTest" duration-ms="133466" started-at="2020-01-21T01:47:13Z" data-provider="newCompanyDataProvider" finished-at="2020-01-21T01:49:27Z">
+        <test-method status="PASS" signature="addCompanyTest(java.util.Map)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@6a4f787b]" name="addCompanyTest" duration-ms="188730" started-at="2020-01-21T05:07:03Z" data-provider="newCompanyDataProvider" finished-at="2020-01-21T05:10:12Z">
           <params>
             <param index="0">
               <value>
@@ -30,11 +35,11 @@ Combining a high grade aluminum with precision engineering, Origin have a proven
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addCompanyTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="teardown" is-config="true" duration-ms="52027" started-at="2020-01-21T01:49:27Z" finished-at="2020-01-21T01:50:19Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@6a4f787b]" name="teardown" is-config="true" duration-ms="9585" started-at="2020-01-21T05:10:12Z" finished-at="2020-01-21T05:10:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.cogmento.testcases.CogmentoHappyPathTests -->
     </test> <!-- CogmentoHappyPathTests -->
-  </suite> <!-- Cogmento Test Suite -->
+  </suite> <!-- Cogmento Test Suite For Firefox -->
 </testng-results>
