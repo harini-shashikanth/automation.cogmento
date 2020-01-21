@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Cogmento Test Suite]">
+  <test thread-count="5" name="CogmentoHappyPathTests(failed)">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.cogmento.testcases.CogmentoHappyPathTests">
+        <methods>
+          <include name="addCompanyTest"/>
+          <include name="setup"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- com.cogmento.testcases.CogmentoHappyPathTests -->
+    </classes>
+  </test> <!-- CogmentoHappyPathTests(failed) -->
+</suite> <!-- Failed suite [Cogmento Test Suite] -->
