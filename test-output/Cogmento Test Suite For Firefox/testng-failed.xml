@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Cogmento Test Suite]">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Cogmento Test Suite For Firefox]">
+  <parameter name="homePageUrl" value="https://cogmento.com"/>
+  <listeners>
+    <listener class-name="com.util.ExtentReporter"/>
+  </listeners>
   <test thread-count="5" name="CogmentoHappyPathTests(failed)">
     <parameter name="browser" value="firefox"/>
     <classes>
@@ -13,4 +17,4 @@
       </class> <!-- com.cogmento.testcases.CogmentoHappyPathTests -->
     </classes>
   </test> <!-- CogmentoHappyPathTests(failed) -->
-</suite> <!-- Failed suite [Cogmento Test Suite] -->
+</suite> <!-- Failed suite [Cogmento Test Suite For Firefox] -->
