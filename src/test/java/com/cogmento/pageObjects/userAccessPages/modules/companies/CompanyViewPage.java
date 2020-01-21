@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cogmento.pages.userAccessPages.modules.companies;
+package com.cogmento.pageObjects.userAccessPages.modules.companies;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.cogmento.pages.userAccessPages.common.UserPageTemplate;
+import com.cogmento.pageObjects.userAccessPages.UserPageTemplate;
 
 /**
  * @author Harini

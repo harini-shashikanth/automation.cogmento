@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.cogmento.pages.publicAccessPages;
+package com.cogmento.pageObjects.publicAccessPages;
 
 import org.openqa.selenium.WebDriver;
 
-import com.cogmento.pages.common.GenericPage;
+import com.cogmento.pageObjects.GenericPage;
 
 /**
  * @author Harini

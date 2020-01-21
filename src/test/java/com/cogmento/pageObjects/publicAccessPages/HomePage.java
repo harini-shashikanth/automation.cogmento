@@ -1,14 +1,14 @@
 /**
  * 
  */
-package com.cogmento.pages.publicAccessPages;
+package com.cogmento.pageObjects.publicAccessPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.cogmento.common.Config;
-import com.cogmento.pages.common.GenericPage;
+import com.cogmento.pageObjects.GenericPage;
+import com.util.ConfigUtil;
 
 /**
  * @author Harini
@@ -45,6 +45,6 @@ public class HomePage extends GenericPage {
 	}
 
 	public void loadHomePage() {
-		getDriver().get(Config.getProperty("homePageUrl"));
+		getDriver().get(ConfigUtil.getProperty("homePageUrl"));
 	}
 }

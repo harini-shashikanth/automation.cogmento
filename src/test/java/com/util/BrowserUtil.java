@@ -1,12 +1,10 @@
 /**
  * 
  */
-package com.cogmento.common;
+package com.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -30,36 +28,40 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
  *
  */
 public class BrowserUtil {
-	/**
-	 * 
-	 */
-	private static String userHomeDir;
+
 	private static String chromeRelativePath;
 	private static String firefoxRelativePath;
 	private static String ieRelativePath;
 	private static String edgeRelativePath;
+
 	private static long pageTimeOutSec;
-
 	private static long implicitWaitMilliSec;
-
 	private static boolean enableScreenshot;
-	private static String screenshotRelativeDirectory;
+
+	private static int counterForScreenshots;
+
 	static {
-		userHomeDir = FileUtils.getUserDirectory().getAbsolutePath();
-		firefoxRelativePath = Config.getProperty("firefoxRelativePath");
-		chromeRelativePath = Config.getProperty("chromeRelativePath");
-		ieRelativePath = Config.getProperty("ieRelativePath");
-		edgeRelativePath = Config.getProperty("edgeRelativePath");
-		System.setProperty("webdriver.gecko.driver", userHomeDir + firefoxRelativePath);
-		System.setProperty("webdriver.chrome.driver", userHomeDir + chromeRelativePath);
-		System.setProperty("webdriver.ie.driver", userHomeDir + ieRelativePath);
-		System.setProperty("webdriver.edge.driver", userHomeDir + edgeRelativePath);
-		pageTimeOutSec = Long.parseLong(Config.getProperty("pageTimeOutSec"));
-		implicitWaitMilliSec = Long.parseLong(Config.getProperty("implicitWaitMilliSec"));
-		if (Config.getProperty("enableScreenshot").toLowerCase().equals("true")) {
+
+		firefoxRelativePath = ConfigUtil.getProperty("firefoxRelativePath");
+		chromeRelativePath = ConfigUtil.getProperty("chromeRelativePath");
+		ieRelativePath = ConfigUtil.getProperty("ieRelativePath");
+		edgeRelativePath = ConfigUtil.getProperty("edgeRelativePath");
+		System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "/driver/" + firefoxRelativePath);
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/driver/" + chromeRelativePath);
+		System.setProperty("webdriver.ie.driver", System.getProperty("user.dir") + "/driver/" + ieRelativePath);
+		System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + "/driver/" + edgeRelativePath);
+		pageTimeOutSec = Long.parseLong(ConfigUtil.getProperty("pageTimeOutSec"));
+		implicitWaitMilliSec = Long.parseLong(ConfigUtil.getProperty("implicitWaitMilliSec"));
+		if (ConfigUtil.getProperty("enableScreenshot").toLowerCase().equals("true")) {
 			enableScreenshot = true;
+			File screenshotDirectory = new File(System.getProperty("user.dir") + "/screenshots");
+			try {
+				FileUtils.cleanDirectory(screenshotDirectory);
+			} catch (IOException e) {
+				System.out.println("unable to clean screenshots directory");
+				e.printStackTrace();
+			}
 		}
-		screenshotRelativeDirectory = Config.getProperty("screenshotRelativeDirectory");
 	}
 
 	public static WebDriver getWebDriver(String browserName) {
@@ -259,17 +261,16 @@ public class BrowserUtil {
 
 	public static void takeScreenshot(WebDriver driver, String url) {
 		if (enableScreenshot) {
-			SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
-			String screenShotFileName = userHomeDir + screenshotRelativeDirectory + generateFileNameFromUrl(url) + "_" + simpleDateFormat.format(new Date()) + ".png";
+			// SimpleDateFormat simpleDateFormat = new
+			// SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
+			String screenShotFileName = System.getProperty("user.dir") + "/screenshots/" + generateFileNameFromUrl(url) + "_" + (++counterForScreenshots) + ".png";
 			File screenshotFile = new File(screenShotFileName);
 			File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 			try {
-				// although it is copy function, the source file is removed by the OS since it
-				// is
-				// in Temp directory
-				FileUtils.copyFile(scrFile, screenshotFile);
+				// The source file is automatically removed by the OS since it is created in
+				// Temp directory
+				FileUtils.moveFile(scrFile, screenshotFile);
 			} catch (IOException e) {
-				System.out.println("Unable to take screenshot for " + url);
 				e.printStackTrace();
 			}
 		}

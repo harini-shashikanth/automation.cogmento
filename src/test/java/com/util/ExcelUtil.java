@@ -1,21 +1,18 @@
-package com.cogmento.common;
+package com.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.io.FileUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelUtil {
-	private static String userHomeDir = FileUtils.getUserDirectory().getAbsolutePath();
-	private static String testDataRelativeDirectory = Config.getProperty("testDataRelativeDirectory");
-	private static String testDataExcelFile = Config.getProperty("testDataExcelFile");
-	public static String testDataExcelFilePath = userHomeDir + testDataRelativeDirectory + testDataExcelFile;
+	public static String testDataExcelFilePath = System.getProperty("user.dir") + "/testdata/cogmentoTestData.xlsx";
 	static Workbook workbook;
 
 	public static Object[][] getTestData(String sheetName) {
@@ -48,7 +45,7 @@ public class ExcelUtil {
 					}
 					datamap.put(key, value); // put only when key is not null
 				}
-				
+
 			}
 			data[i - 1][0] = datamap;
 		}
@@ -62,14 +59,11 @@ public class ExcelUtil {
 			try {
 				is = new FileInputStream(testDataExcelFilePath);
 			} catch (Exception e) {
-				System.out.println("External tesdata excel file not found: " + testDataExcelFilePath + ". Searching in classpath now...");
-				is = ExcelUtil.class.getClassLoader().getResourceAsStream(testDataExcelFile);
+				e.printStackTrace();
 			}
-			// workbook = WorkbookFactory.create(file);
-			// Create Workbook instance for xlsx/xls file input stream
-			if (testDataExcelFile.toLowerCase().endsWith("xlsx")) {
+			if (new File(testDataExcelFilePath).getName().toLowerCase().endsWith("xlsx")) {
 				workbook = new XSSFWorkbook(is);
-			} else if (testDataExcelFile.toLowerCase().endsWith("xls")) {
+			} else {
 				workbook = new HSSFWorkbook(is);
 			}
 		} catch (Exception e) {
@@ -79,12 +73,8 @@ public class ExcelUtil {
 		return sheet;
 	}
 
-	public static String getAbsolutePath(String relativePath) {
-		return userHomeDir + testDataRelativeDirectory + relativePath;
-	}
-
 	public static void main(String[] args) {
 		Object[][] data = getTestDataMaps("Companies");
 		data[0][0].toString();
-	}	
+	}
 }

@@ -1,11 +1,9 @@
 /**
  * 
  */
-package com.cogmento.pages.userAccessPages;
+package com.cogmento.pageObjects.userAccessPages;
 
 import org.openqa.selenium.WebDriver;
-
-import com.cogmento.pages.userAccessPages.common.UserPageTemplate;
 
 /**
  * @author Harini

@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Test Automation Suite for Cogmento">
-	<test thread-count="1" name="CogmentoHappyPathTests_Firefox">
-		<parameter name="browser" value="firefox"></parameter>
+<suite name="Cogmento Test Suite">
+	<test thread-count="1" name="CogmentoHappyPathTests">
+	<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="com.cogmento.testcases.CogmentoHappyPathTests">
-
-			</class>
+			<class name="com.cogmento.testcases.CogmentoHappyPathTests" />
 		</classes>
-	</test>
-</suite> 
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

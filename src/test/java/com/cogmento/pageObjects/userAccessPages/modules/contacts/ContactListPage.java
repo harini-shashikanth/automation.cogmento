@@ -1,11 +1,11 @@
 /**
  * 
  */
-package com.cogmento.pages.userAccessPages.modules.contacts;
+package com.cogmento.pageObjects.userAccessPages.modules.contacts;
 
 import org.openqa.selenium.WebDriver;
 
-import com.cogmento.pages.userAccessPages.common.UserPageTemplate;
+import com.cogmento.pageObjects.userAccessPages.UserPageTemplate;
 
 /**
  * @author Harini

@@ -1,4 +1,4 @@
-package com.cogmento.pages.userAccessPages.modules.companies;
+package com.cogmento.pageObjects.userAccessPages.modules.companies;
 
 import java.io.IOException;
 import java.util.List;
@@ -10,9 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.cogmento.common.BrowserUtil;
-import com.cogmento.common.ExcelUtil;
-import com.cogmento.pages.userAccessPages.common.UserPageTemplate;
+import com.cogmento.pageObjects.userAccessPages.UserPageTemplate;
+import com.util.BrowserUtil;
 
 public class CompanyAddOrEditPage extends UserPageTemplate {
 
@@ -417,10 +416,9 @@ public class CompanyAddOrEditPage extends UserPageTemplate {
 
 	public void setImageFileUpload(String imageFileForUpload) {
 		imageElement.click();
-		String browserName = BrowserUtil.getBrowserName(getDriver());
-		String exeAbsolutePath = ExcelUtil.getAbsolutePath("exe/" + browserName + "/" + imageFileForUpload);
+		String exeFilePath = System.getProperty("user.dir") + "/testdata/exe/" + BrowserUtil.getBrowserName(getDriver()) + "/" + imageFileForUpload;
 		try {
-			Runtime.getRuntime().exec(exeAbsolutePath);
+			Runtime.getRuntime().exec(exeFilePath);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

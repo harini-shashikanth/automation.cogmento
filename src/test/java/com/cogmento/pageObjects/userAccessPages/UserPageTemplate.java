@@ -6,12 +6,12 @@
  * This way they will inherit the left and top sections, and the associated elements and actions.
  *  
  */
-package com.cogmento.pages.userAccessPages.common;
+package com.cogmento.pageObjects.userAccessPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.cogmento.pages.common.GenericPage;
+import com.cogmento.pageObjects.GenericPage;
 
 /**
  * @author Harini

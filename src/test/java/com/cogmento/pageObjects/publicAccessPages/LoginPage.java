@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.cogmento.pages.publicAccessPages;
+package com.cogmento.pageObjects.publicAccessPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.cogmento.pages.common.GenericPage;
+import com.cogmento.pageObjects.GenericPage;
 
 /**
  * @author Harini
@@ -19,7 +19,7 @@ public class LoginPage extends GenericPage {
 	private WebElement submitBtn;
 
 	public LoginPage(WebDriver driver) {
-		super.setDriver(driver);
+		setDriver(driver);
 	}
 
 	public WebElement getUsernameTxt() {

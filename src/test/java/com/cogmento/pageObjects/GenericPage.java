@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cogmento.pages.common;
+package com.cogmento.pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
