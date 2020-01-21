@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Cogmento Test Suite" duration-ms="206149" started-at="2020-01-21T01:18:55Z" finished-at="2020-01-21T01:22:21Z">
+  <suite name="Cogmento Test Suite" duration-ms="211527" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:50:19Z">
     <groups>
     </groups>
-    <test name="CogmentoHappyPathTests" duration-ms="206149" started-at="2020-01-21T01:18:55Z" finished-at="2020-01-21T01:22:21Z">
+    <test name="CogmentoHappyPathTests" duration-ms="211527" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:50:19Z">
       <class name="com.cogmento.testcases.CogmentoHappyPathTests">
-        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="setup" is-config="true" duration-ms="23187" started-at="2020-01-21T01:18:55Z" finished-at="2020-01-21T01:19:18Z">
+        <test-method status="PASS" signature="setup(java.lang.String)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="setup" is-config="true" duration-ms="24688" started-at="2020-01-21T01:46:47Z" finished-at="2020-01-21T01:47:12Z">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="addCompanyTest(java.util.Map)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="addCompanyTest" duration-ms="129675" started-at="2020-01-21T01:19:19Z" data-provider="newCompanyDataProvider" finished-at="2020-01-21T01:21:29Z">
+        <test-method status="PASS" signature="addCompanyTest(java.util.Map)[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="addCompanyTest" duration-ms="133466" started-at="2020-01-21T01:47:13Z" data-provider="newCompanyDataProvider" finished-at="2020-01-21T01:49:27Z">
           <params>
             <param index="0">
               <value>
@@ -30,7 +30,7 @@ Combining a high grade aluminum with precision engineering, Origin have a proven
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addCompanyTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="teardown" is-config="true" duration-ms="51941" started-at="2020-01-21T01:21:29Z" finished-at="2020-01-21T01:22:21Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.cogmento.testcases.CogmentoHappyPathTests@59f99ea]" name="teardown" is-config="true" duration-ms="52027" started-at="2020-01-21T01:49:27Z" finished-at="2020-01-21T01:50:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
